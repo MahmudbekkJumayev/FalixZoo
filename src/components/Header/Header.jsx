@@ -6,9 +6,11 @@ import buttonIcon from "../../assets/icons/free_icon_1 (1).svg";
 
 const Header = () => {
   return (
-    <div className="container">
-      <Slider />
-      <div className="grid grid-cols-2 gap-4 mt-8">
+    <div className="container flex flex-col gap-10">
+      <div className="rounded-lg">
+        <Slider />
+      </div>
+      <div className="grid grid-cols-2 gap-3 mt-8">
         {/* Birinchi div: cardImg1 */}
         <div className="h-64 overflow-hidden rounded-lg group relative">
           <div
@@ -26,7 +28,12 @@ const Header = () => {
               </span>
               <button className="p-3 flex justify-center items-center gap-2 rounded-sm bg-green-700 text-white">
                 Sotib olish{" "}
-                <img width={12} height={12} src={buttonIcon} alt="button icon" />
+                <img
+                  width={12}
+                  height={12}
+                  src={buttonIcon}
+                  alt="button icon"
+                />
               </button>
             </div>
           </div>
@@ -49,7 +56,12 @@ const Header = () => {
               </span>
               <button className="p-3 flex justify-center items-center gap-2 rounded-sm bg-green-700 text-white">
                 Sotib olish{" "}
-                <img width={12} height={12} src={buttonIcon} alt="button icon" />
+                <img
+                  width={12}
+                  height={12}
+                  src={buttonIcon}
+                  alt="button icon"
+                />
               </button>
             </div>
           </div>
