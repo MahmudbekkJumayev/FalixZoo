@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Category from "./Pages/Category/Category";
+import Profile from "./Pages/Profile/Profile";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/category/:categoryName" element={<Category />} />
+            <Route path="/profile/:sectionName" element={<Profile />} />
           </Routes>
         </main>
         <footer>

@@ -11,9 +11,9 @@ const images = [img1, img2, img3, img4, img5, img6];
 export default function Sponsor() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const getSlidesToShow = () => {
-    if (window.innerWidth >= 1024) return 5; 
-    if (window.innerWidth >= 768) return 3; 
-    return 1; 
+    if (window.innerWidth >= 1024) return 5; // Desktops
+    if (window.innerWidth >= 768) return 3; // Tablets
+    return 1; // Mobile devices
   };
 
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow);
@@ -27,7 +27,7 @@ export default function Sponsor() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); 
+    }, 2000); // Slaydlari 2 soniya bir marta almashtiradi
     return () => clearInterval(interval);
   }, []);
 
@@ -40,24 +40,19 @@ export default function Sponsor() {
           width: `${images.length * (100 / slidesToShow)}%`,
         }}
       >
-        {[...images, ...images].map(
-          (
-            image,
-            index 
-          ) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full flex justify-center"
-              style={{ width: `${100 / slidesToShow}%` }}
-            >
-              <img
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className="w-40 h-auto"
-              />
-            </div>
-          )
-        )}
+        {[...images, ...images].map((image, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 w-full sm:w-1/3 md:w-1/5 flex justify-center"
+            style={{ width: `${100 / slidesToShow}%` }}
+          >
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-40 h-auto"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

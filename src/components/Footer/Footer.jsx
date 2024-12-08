@@ -3,14 +3,13 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="pt-10">
-      <div className="bg-green-700 py-10">
+      <div className="bg-green-700 py-10 rounded-t-md">
         <div className="container">
-          <div className="flex justify-between">
+          <div className="flex flex-col gap-6 md:flex-row md:justify-between">
+            {/* First Column */}
             <div className="flex flex-col justify-start items-start gap-2">
-              <h4 className="text-gray-900 text-[18px] font-medium">
-                Ma'lumotlar
-              </h4>
-              <ul className="text-white font-normal">
+              <h4 className="text-gray-800 text-lg font-medium">Ma'lumotlar</h4>
+              <ul className="text-white text-sm font-normal">
                 <li>
                   <a href="">Biz xaqimizda</a>
                 </li>
@@ -25,11 +24,11 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Second Column */}
             <div className="flex flex-col justify-start items-start gap-2">
-              <h4 className="text-gray-900 text-[18px] font-medium">
-                Mijozlar Xizmati
-              </h4>
-              <ul className="text-white font-normal">
+              <h4 className="text-gray-800 text-lg font-medium">Mijozlar Xizmati</h4>
+              <ul className="text-white text-sm font-normal">
                 <li>
                   <a href="">Biz bilan Bog'lanish</a>
                 </li>
@@ -41,11 +40,11 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Third Column */}
             <div className="flex flex-col justify-start items-start gap-2">
-              <h4 className="text-gray-900 text-[18px] font-medium">
-                Qo'shimchalar
-              </h4>
-              <ul className="text-white font-normal">
+              <h4 className="text-gray-800 text-lg font-medium">Qo'shimchalar</h4>
+              <ul className="text-white text-sm font-normal">
                 <li>
                   <a href="">Brendlar</a>
                 </li>
@@ -60,11 +59,11 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Fourth Column */}
             <div className="flex flex-col justify-start items-start gap-2">
-              <h4 className="text-gray-900 text-[18px] font-medium">
-                Mening Hisobim
-              </h4>
-              <ul className="text-white font-normal">
+              <h4 className="text-gray-800 text-lg font-medium">Mening Hisobim</h4>
+              <ul className="text-white text-sm font-normal">
                 <li>
                   <a href="">Mening Hisobim</a>
                 </li>
@@ -80,14 +79,17 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          {/* Foot 2 qismi */}
-          <span className="h-[1px] flex justify-center items-center my-5 bg-white w-[100%]"></span>
-          <div className="flex flex-col justify-start items-start">
+
+          {/* Footer Separator */}
+          <span className="h-[1px] flex justify-center items-center my-5 bg-white w-full"></span>
+
+          {/* Footer Bottom */}
+          <div className="flex flex-col  justify-start items-start text-start">
             <span className="flex justify-center items-center gap-1">
-                <p className="text-white font-medium">Nextin Web Studio</p>
-                <p className="text-gray-900">tomonidan dasturlangan</p>
+              <p className="text-white text-sm font-medium">Nextin Web Studio</p>
+              <p className="text-gray-900 text-sm">tomonidan dasturlangan</p>
             </span>
-            <p>FelixZoo © 2024</p>
+            <p className="text-white text-sm">FelixZoo © 2024</p>
           </div>
         </div>
       </div>

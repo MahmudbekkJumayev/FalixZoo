@@ -40,7 +40,7 @@ const Category = () => {
       </div>
 
       {/* categories */}
-      <div className="flex py-5 gap-5">
+      <div className="flex py-5 gap-10">
         <div className="flex flex-col w-[300px] justify-start items-start rounded-lg">
           {Object.keys(categories).map((key, index) => (
             <span
@@ -61,12 +61,17 @@ const Category = () => {
 
         {/* cards */}
         <div>
-          {activeCategory === "Cats" && <Cats />}
-          {activeCategory === "Rodents" && <Rodents />}
-          {activeCategory === "Birds" && <Birds />}
-          {activeCategory === "Fish" && <Fish />}
-          {activeCategory === "Vetapteka" && <Vetapteka />}
-          {activeCategory === "Dogs" && <Dogs />}
+          <div className="text-[20px] font-medium">
+            {activeCategory === "Cats" && <Cats />}
+            {activeCategory === "Rodents" && <Rodents />}
+            {activeCategory === "Birds" && <Birds />}
+            {activeCategory === "Fish" && <Fish />}
+            {activeCategory === "Vetapteka" && <Vetapteka />}
+            {activeCategory === "Dogs" && <Dogs />}
+          </div>
+          <div className="">
+            <div></div>
+          </div>
         </div>
       </div>
     </div>

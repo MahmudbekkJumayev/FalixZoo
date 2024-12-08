@@ -1,59 +1,113 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import React, { useState, useEffect } from "react";
 import img1 from "../../assets/images/iPhone6-1140x380.jpg";
 import img2 from "../../assets/images/MacBookAir-1140x380.jpg";
 
-// Import required modules
-import { Pagination, Navigation } from "swiper/modules";
-
 export default function Slider() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [img1, img2];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); 
+    return () => clearInterval(interval); 
+  }, [images.length]);
+
+  const handlePrev = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   return (
-    <div className="rounded-lg h-[50vh]">
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={20}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
+    <div id="indicators-carousel" className="relative w-full">
+      {/* Slider */}
+      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={img}
+              className="block w-full h-full object-cover"
+              alt={`Slide ${index + 1}`}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Dots */}
+      <div className="absolute z-30 flex -translate-x-1/2 space-x-3 bottom-5 left-1/2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            className={`w-3 h-3 rounded-full ${
+              index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+            aria-label={`Slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Prev Button */}
+      <button
+        type="button"
+        className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        onClick={handlePrev}
       >
-        <SwiperSlide>
-          <div className="relative group">
-            <img
-              src={img1}
-              alt="iPhone"
-              className="w-full transition-all duration-300 ease-in-out transform group-hover:scale-105"
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+          <svg
+            className="w-4 h-4 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 1 1 5l4 4"
             />
-            <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out flex justify-center items-center">
-              <div className="text-white text-2xl space-x-4">
-                <i className="fas fa-heart cursor-pointer hover:text-red-500 transition-all duration-200 ease-in-out"></i>
-                <i className="fas fa-cart-plus cursor-pointer hover:text-green-500 transition-all duration-200 ease-in-out"></i>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="relative group">
-            <img
-              src={img2}
-              alt="MacBook Air"
-              className="w-full h-auto transition-all duration-300 ease-in-out transform group-hover:scale-105"
+          </svg>
+          <span className="sr-only">Previous</span>
+        </span>
+      </button>
+
+      {/* Next Button */}
+      <button
+        type="button"
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        onClick={handleNext}
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white">
+          <svg
+            className="w-4 h-4 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m1 9 4-4-4-4"
             />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out flex justify-center items-center">
-              <div className="text-white text-2xl space-x-4">
-                <i className="fas fa-heart cursor-pointer hover:text-red-500 transition-all duration-200 ease-in-out"></i>
-                <i className="fas fa-cart-plus cursor-pointer hover:text-green-500 transition-all duration-200 ease-in-out"></i>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+          </svg>
+          <span className="sr-only">Next</span>
+        </span>
+      </button>
     </div>
   );
 }

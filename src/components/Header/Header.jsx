@@ -6,27 +6,30 @@ import buttonIcon from "../../assets/icons/free_icon_1 (1).svg";
 
 const Header = () => {
   return (
-    <div className="container flex flex-col gap-10">
+    <div className="container mx-auto flex flex-col gap-10">
+      {/* Slider Section */}
       <div className="rounded-lg">
         <Slider />
       </div>
-      <div className="grid grid-cols-2 gap-3 mt-8">
-        {/* Birinchi div: cardImg1 */}
-        <div className="h-64 overflow-hidden rounded-lg group relative">
+
+      {/* Cards Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-8">
+        {/* First Card */}
+        <div className="h-48 sm:h-64 md:h-80 overflow-hidden rounded-lg group relative">
           <div
-            className="h-full px-[50px] flex justify-start items-center w-full bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+            className="h-full px-6 sm:px-8 md:px-[50px] flex justify-start items-center w-full bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
             style={{ backgroundImage: `url(${cardImg1})` }}
           >
             <div className="flex flex-col justify-center items-start">
-              <span className="py-5">
-                <p className="text-white text-[17px] font-medium">
+              <span className="py-3 sm:py-5">
+                <p className="text-white text-sm sm:text-[17px] font-medium">
                   Yangi Mahsulotlar
                 </p>
-                <h4 className="text-white text-[25px] font-medium">
+                <h4 className="text-white text-lg sm:text-[25px] font-medium">
                   Yangiliklar
                 </h4>
               </span>
-              <button className="p-3 flex justify-center items-center gap-2 rounded-sm bg-green-700 text-white">
+              <button className="px-4 py-2 flex justify-center items-center gap-2 rounded-sm bg-green-700 text-white text-sm sm:text-base">
                 Sotib olish{" "}
                 <img
                   width={12}
@@ -39,22 +42,22 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Ikkinchi div: cardImg2 */}
-        <div className="h-64 overflow-hidden rounded-lg group relative">
+        {/* Second Card */}
+        <div className="h-48 sm:h-64 md:h-80 overflow-hidden rounded-lg group relative">
           <div
-            className="h-full w-full flex justify-start items-center px-[50px] bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
+            className="h-full px-6 sm:px-8 md:px-[50px] flex justify-start items-center w-full bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
             style={{ backgroundImage: `url(${cardImg2})` }}
           >
             <div className="flex flex-col justify-center items-start">
-              <span className="py-5">
-                <p className="text-white text-[17px] font-medium">
+              <span className="py-3 sm:py-5">
+                <p className="text-white text-sm sm:text-[17px] font-medium">
                   Yangi Mahsulotlar
                 </p>
-                <h4 className="text-white text-[25px] font-medium">
+                <h4 className="text-white text-lg sm:text-[25px] font-medium">
                   Yangiliklar
                 </h4>
               </span>
-              <button className="p-3 flex justify-center items-center gap-2 rounded-sm bg-green-700 text-white">
+              <button className="px-4 py-2 flex justify-center items-center gap-2 rounded-sm bg-green-700 text-white text-sm sm:text-base">
                 Sotib olish{" "}
                 <img
                   width={12}

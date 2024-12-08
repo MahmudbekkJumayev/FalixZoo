@@ -1,29 +1,34 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import phone from "../../assets/icons/phone-call.png";
 import uzbFlag from "../../assets/images/en-gb.png";
 import logo from "../../assets/images/1.png";
 import search from "../../assets/images/magnifying-glass.png";
-import icon1 from "../../assets/icons/korzinka.svg";
+import korzinka from "../../assets/icons/korzinka.svg";
 import heart from "../../assets/icons/heart.svg";
 import person from "../../assets/icons/person.svg";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import SiginUp from "../../Pages/Registor/SiginUp/SiginUp";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const handleOpenModal = () => setIsOpenModal(true);
   const handleCloseModal = () => setIsOpenModal(false);
 
+  const toggleProfileSection = () => {
+    setIsProfileOpen(!isProfileOpen);
+  };
+
   return (
-    <div className="relative h-[170px]">
+    <div className="relative pb-3">
       <div className="flex bg-green-50 px-[20px] md:px-[120px] flex-col py-2 gap-3">
         {/* first container */}
-        <div className="flex justify-between flex-col md:flex-row items-center">
-          <div className="flex justify-center items-center gap-3">
-            <ul className="flex justify-center text-[13px] items-center gap-3 text-gray-600 font-normal">
+        <div className="flex flex-col md:flex-row justify-between items-center pb-4 gap-4">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-3 w-full">
+            <ul className="flex flex-wrap justify-center md:justify-start text-[13px] items-center gap-3 text-gray-600 font-normal w-full">
               <li>
                 <a href="">Biz xaqimizda</a>
               </li>
@@ -38,7 +43,8 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="flex justify-center items-center gap-3">
+
+          <div className="flex justify-center items-center gap-3 ">
             <span>
               <img
                 width={15}
@@ -49,7 +55,7 @@ const Navbar = () => {
               />
             </span>
             <span className="text-gray-600 text-[13px]">
-              <a href="+998977004917">+998977004917</a>
+              <a href="tel:+998977004917">+998977004917</a>
             </span>
             <span className="flex justify-center items-center gap-2">
               <img width={17} height={17} src={uzbFlag} alt="uz flag" />
@@ -59,7 +65,7 @@ const Navbar = () => {
         </div>
 
         {/* second container */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center">
           <div>
             <a href="/">
               <img width={120} height={120} src={logo} alt="logo icon" />
@@ -72,23 +78,25 @@ const Navbar = () => {
               type="text"
             />
             <button className="bg-green-600 h-10 px-5 rounded-r-2xl">
-              <img width={15} src={search} alt="search icon" />
+              <img width={15} src={search} color="white" alt="search icon" />
             </button>
           </div>
           <div className="flex justify-center items-center gap-2">
-            <span className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2">
-              <img width={25} src={icon1} alt="icon1" />
-              <p className="font-medium">0</p>
+            <span
+              onClick={toggleProfileSection}
+              className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2"
+            >
+              <img width={25} src={korzinka} alt="korzinka icon" />
             </span>
             <span className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2">
-              <img width={25} src={heart} alt="icon2" />
+              <img width={25} src={heart} alt="heart icon" />
               <p className="font-medium">0</p>
             </span>
             <span
               onClick={handleOpenModal}
               className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2"
             >
-              <img width={25} src={person} alt="icon3" />
+              <img width={25} src={person} alt="person icon" />
               <p className="font-medium">Kirish</p>
             </span>
           </div>
@@ -110,7 +118,7 @@ const Navbar = () => {
 
         {/* Desktop View (Categories List) */}
         <div className="hidden md:flex justify-center items-center gap-5 text-gray-100 font-normal text-[17px]">
-          <ul className="flex justify-center items-center gap-5 text-gray-100 font-normal text-[17px]">
+          <ul className="flex justify-center items-center gap-5 text-gray-100 font-normal text-[18px]">
             <li>
               <Link to="/category/Cats">Mushuklar</Link>
             </li>
@@ -131,50 +139,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
-        {/* Mobile View (Categories open when burger is clicked) */}
-        {isMenuOpen && (
-          <div className="md:hidden flex flex-col items-center mt-2">
-            <ul className="flex flex-col items-center gap-3 text-gray-100 font-normal text-[17px]">
-              <li>
-                <Link to="/category/Cats" onClick={() => setIsMenuOpen(false)}>
-                  Mushuklar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/category/Rodents"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Kemiruvchilar
-                </Link>
-              </li>
-              <li>
-                <Link to="/category/Birds" onClick={() => setIsMenuOpen(false)}>
-                  Qushlar
-                </Link>
-              </li>
-              <li>
-                <Link to="/category/Fish" onClick={() => setIsMenuOpen(false)}>
-                  Baliqlar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/category/Vetapteka"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Vetapteka
-                </Link>
-              </li>
-              <li>
-                <Link to="/category/Dogs" onClick={() => setIsMenuOpen(false)}>
-                  Itlar
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
       </div>
       <SiginUp isOpen={isOpenModal} onClose={handleCloseModal} />
     </div>

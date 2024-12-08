@@ -2,15 +2,24 @@ import React, { useState } from "react";
 
 const SignUp = ({ isOpen, onClose }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [error, setError] = useState("");
+
+  const uzbekistanPhoneRegex = /^\+998\d{9}$/;
 
   const handleChange = (e) => {
     const value = e.target.value;
-    if (/^\+998\d*$/.test(value)) {
-      setPhoneNumber(value);
+    setPhoneNumber(value); // Kiritilgan raqamni set qilish
+  };
+
+  const handleBlur = () => {
+    if (phoneNumber && !uzbekistanPhoneRegex.test(phoneNumber)) {
+      setError("Iltimos, O'zbekiston telefon raqamini kiriting.");
+    } else {
+      setError(""); // Xato yo'q
     }
   };
 
-  if (!isOpen) return null; 
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center z-50">
@@ -42,15 +51,24 @@ const SignUp = ({ isOpen, onClose }) => {
               id="phone"
               value={phoneNumber}
               onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="+998 ___-__-__"
-              className="bg-gray-50 border border-gray-300 text-gray-950 text-[17px] font-medium rounded-lg focus:ring-green-500 focus:border-green-200 block w-full p-2.5 outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-700"
+              className={`bg-gray-50 border ${
+                error ? "border-red-500" : "border-gray-300"
+              } text-gray-950 text-[17px] font-medium rounded-lg focus:ring-green-500 focus:border-green-200 block w-full p-2.5 outline-none dark:bg-gray-300 dark:border-gray-300 dark:placeholder-gray-700`}
               required
             />
+            {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           </div>
 
           <button
             type="submit"
-            className="w-full text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            disabled={!phoneNumber || !!error}
+            className={`w-full text-white ${
+              phoneNumber && !error
+                ? "bg-green-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
+                : "bg-gray-400 cursor-not-allowed"
+            } font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800`}
           >
             Kodni olish
           </button>
