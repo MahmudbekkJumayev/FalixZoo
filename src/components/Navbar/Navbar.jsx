@@ -118,8 +118,8 @@ const Navbar = () => {
 
         {/* Mobile View Menu */}
         {isMenuOpen && (
-          <div className=" text-white py-3">
-            <ul className="flex flex-col gap-3 hover:text-red-400 text-white">
+          <div className="md:hidden text-white py-3">
+            <ul className="flex flex-col gap-3 hover:text-gray-200 text-white">
               <li>
                 <Link to="/category/Cats" onClick={() => setIsMenuOpen(false)}>
                   Mushuklar
