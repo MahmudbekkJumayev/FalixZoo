@@ -116,6 +116,50 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile View Menu */}
+        {isMenuOpen && (
+          <div className=" text-white py-3">
+            <ul className="flex flex-col gap-3 hover:text-red-400 text-white">
+              <li>
+                <Link to="/category/Cats" onClick={() => setIsMenuOpen(false)}>
+                  Mushuklar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/category/Rodents"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Kemiruvchilar
+                </Link>
+              </li>
+              <li>
+                <Link to="/category/Birds" onClick={() => setIsMenuOpen(false)}>
+                  Qushlar
+                </Link>
+              </li>
+              <li>
+                <Link to="/category/Fish" onClick={() => setIsMenuOpen(false)}>
+                  Baliqlar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/category/Vetapteka"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Vetapteka
+                </Link>
+              </li>
+              <li>
+                <Link to="/category/Dogs" onClick={() => setIsMenuOpen(false)}>
+                  Itlar
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+
         {/* Desktop View (Categories List) */}
         <div className="hidden md:flex justify-center items-center gap-5 text-gray-100 font-normal text-[17px]">
           <ul className="flex justify-center items-center gap-5 text-gray-100 font-normal text-[18px]">
