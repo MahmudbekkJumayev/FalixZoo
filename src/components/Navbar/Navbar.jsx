@@ -103,7 +103,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="bg-green-700 py-2 rounded-md px-3 sticky top-0 z-50">
+      <div className="bg-green-700 py-2 px-3 sticky top-0 z-50">
         {/* Mobile View (Burger Icon and Categories) */}
         <div className="md:hidden flex justify-between items-center">
           <h2 className="text-white font-semibold text-xl">Kategoriyalar</h2>

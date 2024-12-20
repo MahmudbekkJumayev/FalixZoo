@@ -33,7 +33,7 @@ const Category = () => {
   return (
     <div className="container flex flex-col">
       {/* navigate */}
-      <div className="flex justify-start items-center gap-2">
+      <div className="flex justify-start items-center gap-2 bg-gray-100 p-2 rounded-lg">
         <img width={20} height={20} src={homeicon} alt="home icon" />
         <span className="text-[22px] font-medium">/</span>
         <p>{categories[activeCategory]?.name || "Kategoriya mavjud emas"}</p>
