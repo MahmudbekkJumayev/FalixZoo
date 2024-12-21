@@ -8,14 +8,14 @@ const SignUp = ({ isOpen, onClose }) => {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    setPhoneNumber(value); // Kiritilgan raqamni set qilish
+    setPhoneNumber(value); 
   };
 
   const handleBlur = () => {
     if (phoneNumber && !uzbekistanPhoneRegex.test(phoneNumber)) {
       setError("Iltimos, O'zbekiston telefon raqamini kiriting.");
     } else {
-      setError(""); // Xato yo'q
+      setError(""); 
     }
   };
 
