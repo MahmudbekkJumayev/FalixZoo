@@ -3,18 +3,18 @@ import Slider from "../Slider/Slider";
 import cardImg1 from "../../assets/images/catcms-1.jpg";
 import cardImg2 from "../../assets/images/catcms-2.jpg";
 import buttonIcon from "../../assets/icons/free_icon_1 (1).svg";
+import Discount from "./Discount";
 
 const Header = () => {
   return (
     <div className="container mx-auto flex flex-col gap-10">
       {/* Slider Section */}
-      <div className="rounded-lg">
+      <div className="rounded-lg bg-gray-200">
         <Slider />
       </div>
+      <Discount />
 
-      {/* Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-8">
-        {/* First Card */}
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mt-8">
         <div className="h-48 sm:h-64 md:h-80 overflow-hidden rounded-lg group relative">
           <div
             className="h-full px-6 sm:px-8 md:px-[50px] flex justify-start items-center w-full bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
@@ -42,7 +42,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Second Card */}
+       
         <div className="h-48 sm:h-64 md:h-80 overflow-hidden rounded-lg group relative">
           <div
             className="h-full px-6 sm:px-8 md:px-[50px] flex justify-start items-center w-full bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
@@ -69,7 +69,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

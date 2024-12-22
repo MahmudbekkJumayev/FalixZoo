@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import img3 from "../../assets/images/Animalfood3.webp";
 import img1 from "../../assets/images/iPhone6-1140x380.jpg";
 import img2 from "../../assets/images/MacBookAir-1140x380.jpg";
 
 export default function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [img1, img2];
+  const images = [img1, img2,img3];
 
   useEffect(() => {
     const interval = setInterval(() => {

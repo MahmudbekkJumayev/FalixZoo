@@ -7,11 +7,15 @@ import twitter from "../../assets/icons/Twitter.svg";
 import telgram from "../../assets/icons/Telegram.svg";
 import media from "../../assets/icons/instagram4.png";
 import logo from "../../assets/images/1.png";
+import visa from "../../assets/icons/visa.svg";
+import mastercard from "../../assets/icons/mastercard.svg";
+import uzcard from "../../assets/icons/images.png";
+import humo from "../../assets/icons/humo-logo-more.png";
 
 const Footer = () => {
   return (
     <div className="pt-10">
-      <div className="bg-gray-100 py-10  rounded-t-md">
+      <div className="bg-blue-50 pt-10  rounded-t-md">
         <div className="container">
           {/* footer top container */}
           <div className="flex justify-between border-b-[1px] py-10 border-gray-300">
@@ -104,25 +108,45 @@ const Footer = () => {
             </span>
           </div>
           {/* Footer bottom container */}
-          <div className="flex justify-center items-center gap-4 py-5">
+          <div className="flex justify-center items-center gap-4 border-b-[1px] py-7 border-gray-300">
             <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[1px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
               <a href="">Privacy Policy</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[1px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
               <a href="">Terms & Conditions</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute aft~er:right-0 after:top-1/2 after:h-4 after:w-[1px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
               <a href="">Delivery Information</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[1px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
               <a href="">About Us</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[1px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
               <a href="">Production</a>
             </p>
             <p className="relative">
               <a href="">Connection</a>
             </p>
+          </div>
+          {/* Footer paymet */}
+          <div className="flex p-2 justify-between items-center">
+            <div>
+              <p>Powered By OpenCart Felix Zoo © 2024</p>
+            </div>
+            <div className="flex justify-center items-center gap-3">
+              <span className="hover:scale-110 transition-transform duration-300">
+                <img width={50} height={35} src={visa} alt="Visa" />
+              </span>
+              <span className="hover:scale-110 transition-transform duration-300">
+                <img width={50} height={35} src={mastercard} alt="MasterCard" />
+              </span>
+              <span className="hover:scale-110 transition-transform duration-300">
+                <img width={50} height={35} src={uzcard} alt="UzCard" />
+              </span>
+              <span className="hover:scale-110 transition-transform duration-300">
+                <img width={50} height={35} src={humo} alt="Humo" />
+              </span>
+            </div>
           </div>
         </div>
       </div>
