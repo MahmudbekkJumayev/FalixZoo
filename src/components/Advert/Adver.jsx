@@ -10,7 +10,6 @@ const Adver = () => {
     "/src/assets/images/Animalfood3.webp",
     "/src/assets/images/catcms-1.jpg",
     "/src/assets/images/catcms-1.jpg",
-   
   ];
 
   const nextSlide = () => {
@@ -39,7 +38,6 @@ const Adver = () => {
               >
                 <img
                   src={slide}
-                  objectFit="cover"
                   alt={`Slide ${index + 1}`}
                   className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 />
