@@ -82,16 +82,20 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex justify-center items-center gap-2">
-            <span
-              onClick={toggleProfileSection}
-              className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2"
-            >
-              <img width={25} src={korzinka} alt="korzinka icon" />
-            </span>
-            <span className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2">
-              <img width={25} src={heart} alt="heart icon" />
-              <p className="font-medium">0</p>
-            </span>
+            <Link to="/korzinka">
+              <span
+                onClick={toggleProfileSection}
+                className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2"
+              >
+                <img width={25} src={korzinka} alt="korzinka icon" />
+              </span>
+            </Link>
+            <Link to="/favorites">
+              <span className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2">
+                <img width={25} src={heart} alt="heart icon" />
+                <p className="font-medium">0</p>
+              </span>
+            </Link>
             <span
               onClick={handleOpenModal}
               className="flex justify-center gap-2 cursor-pointer hover:bg-gray-300 rounded-lg p-2"

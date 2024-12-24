@@ -18,12 +18,12 @@ const Footer = () => {
       <div className="bg-blue-50 pt-10  rounded-t-md">
         <div className="container">
           {/* footer top container */}
-          <div className="flex justify-between border-b-[1px] py-10 border-gray-300">
+          <div className="flex flex-col md:flex-row justify-between border-b-[1px] py-10 border-gray-300">
             <div className="flex flex-col gap-4">
               <h3 className="text-center text-gray-900 font-medium text-[19px] md:text-[22px]">
                 Yuklab Olish
               </h3>
-              <div className="flex justify-between items-center gap-2">
+              <div className="flex justify-center items-center gap-2">
                 <span className="bg-black cursor-pointer px-4 py-2 flex justify-between items-center gap-4 rounded-md">
                   <img
                     className=" object-fill"
@@ -70,7 +70,7 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-            <span className="h-[200px] w-[1px] flex justify-center bg-gray-300"></span>
+            <span className="h-[200px] w-[1px] hidden md:block bg-gray-300"></span>
             <div className="flex flex-col justify-center items-center gap-4 p-2">
               <img className="w-[150px]" src={logo} alt="" />
               <p className="text-center w-[250px] text-gray-700 font-normal">
@@ -78,7 +78,7 @@ const Footer = () => {
                 id, similique laudantium aperiam blanditiis sequi.
               </p>
             </div>
-            <span className="h-[200px] w-[1px] flex justify-center bg-gray-300"></span>
+            <span className="h-[200px] w-[1px] hidden md:block bg-gray-300"></span>
             <div className="flex flex-col items-center gap-4">
               <h3 className="text-center text-gray-900 font-medium text-[19px] md:text-[22px]">
                 Malumotlar
@@ -91,15 +91,15 @@ const Footer = () => {
             </div>
           </div>
           {/* Footer between container */}
-          <div className="border-b-[1px] flex justify-center gap-3 py-10 border-gray-300">
-            <h3 className=" text-gray-900 font-medium text-[19px] md:text-[22px]">
+          <div className="border-b-[1px] w-[100%] flex flex-col md:flex-row items-center justify-center gap-3 py-10 border-gray-300">
+            <h3 className="w-[30%] text-gray-900 font-medium text-center text-[19px] md:text-[22px]">
               Sign Up For Newsletter
             </h3>
-            <span>
+            <span className="w-[70%] flex justify-center items-center">
               <input
                 color="black"
                 placeholder="Your Email Address"
-                className="p-2 w-[500px] rounded-l-md outline-none"
+                className="p-2 rounded-l-md outline-none w-[70%]"
                 type="email"
               />
               <button className="bg-green-600 p-2 rounded-r-md text-white font-medium">
@@ -108,26 +108,28 @@ const Footer = () => {
             </span>
           </div>
           {/* Footer bottom container */}
-          <div className="flex justify-center items-center gap-4 border-b-[1px] py-7 border-gray-300">
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[1px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+          {/* Footer bottom container */}
+          <div className="flex flex-col md:flex-row text-center justify-center items-center gap-4 border-b-[1px] py-7 border-gray-300">
+            <p className="relative text-center  pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[1px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Privacy Policy</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative text-center pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[2px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Terms & Conditions</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative text-center pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[2px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Delivery Information</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative text-center pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[2px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">About Us</a>
             </p>
-            <p className="relative pr-4 after:content-[''] after:absolute after:right-0 after:top-1/2 after:h-4 after:w-[2px] after:bg-gray-600 after:translate-y-[-50%] last:after:hidden">
+            <p className="relative text-center pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[2px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Production</a>
             </p>
-            <p className="relative">
+            <p className="relative text-center">
               <a href="">Connection</a>
             </p>
           </div>
+
           {/* Footer paymet */}
           <div className="flex p-2 justify-between items-center">
             <div>
