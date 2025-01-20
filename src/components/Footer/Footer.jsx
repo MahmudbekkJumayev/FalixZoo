@@ -109,7 +109,7 @@ const Footer = () => {
           </div>
           {/* Footer bottom container */}
           {/* Footer bottom container */}
-          <div className="flex flex-col md:flex-row text-center justify-center items-center gap-4 border-b-[1px] py-7 border-gray-300">
+          <div className="flex flex-col md:flex-row  justify-center items-center gap-4 border-b-[1px] py-7 border-gray-300">
             <p className="relative text-center  pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[1px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Privacy Policy</a>
             </p>
@@ -125,13 +125,13 @@ const Footer = () => {
             <p className="relative text-center pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[2px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Production</a>
             </p>
-            <p className="relative text-center">
+            <p className="relative text-center pr-4 md:after:content-[''] md:after:absolute md:after:right-0 md:after:top-1/2 md:after:h-4 md:after:w-[2px] md:after:bg-gray-600 md:after:translate-y-[-50%] md:last:after:hidden">
               <a href="">Connection</a>
             </p>
           </div>
 
           {/* Footer paymet */}
-          <div className="flex p-2 justify-between items-center">
+          <div className="flex p-2 flex-col-reverse md:flex-row justify-between items-center">
             <div>
               <p>Powered By OpenCart Felix Zoo © 2024</p>
             </div>

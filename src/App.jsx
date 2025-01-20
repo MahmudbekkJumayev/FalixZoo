@@ -22,6 +22,7 @@ function App() {
             <Route path="/profile/:sectionName" element={<Profile />} />
             <Route path="/korzinka" element={<Korzinka/>}/>
             <Route path="/favorites" element={<Favorites/>}/>
+            <Route path="/profile" element={<Profile/>}/>
           </Routes>
         </main>
         <footer>

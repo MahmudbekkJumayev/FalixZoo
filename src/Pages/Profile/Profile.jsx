@@ -4,8 +4,8 @@ import Orders from "./Order"; // Assuming Orders is the "Buyurtmalar" section
 import { Account } from "./Account"; // Correct import for named export
 
 const sections = {
-  Buyurtmalar: { name: "Buyurtmalar" },
   Malumotlar: { name: "Ma'lumotlar" },
+  Buyurtmalar: { name: "Buyurtmalar" },
 };
 
 const Profile = () => {
@@ -24,12 +24,10 @@ const Profile = () => {
   }, [sectionName, navigate]);
 
   return (
-    <div className="container flex flex-col">
-      <div className="flex justify-start items-center gap-2 mb-4">
-        <span className="text-[22px] font-medium">Profil /</span>
-        <p>{sections[activeSection]?.name || "Bo'lim mavjud emas"}</p>
-      </div>
-
+    <div className="container h-[70vh] flex flex-col">
+      <h2 className="text-[25px] py-5 font-medium text-gray-800">
+        Toshtemirov Mahmudbek
+      </h2>
       <div className="flex gap-5">
         <div className="flex flex-col w-[300px] rounded-lg">
           {Object.keys(sections).map((key) => (
